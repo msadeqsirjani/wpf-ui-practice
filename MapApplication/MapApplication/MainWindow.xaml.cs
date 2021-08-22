@@ -13,7 +13,7 @@ namespace MapApplication
         {
             InitializeComponent();
 
-            Map.CredentialsProvider = new ApplicationIdCredentialsProvider("Lfv44DQzTbJaFpirns6L~2vQlrWcA6sOj6rINoie7AQ~Ap33ySEkdG8SzabV6pJwFEdjUlqdU6PbxmmsuulpHRfzLlAND7qnH0mPJB7DWmEG");
+            Map.CredentialsProvider = new ApplicationIdCredentialsProvider("your-secret-key");
         }
 
         private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
