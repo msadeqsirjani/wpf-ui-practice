@@ -1,0 +1,317 @@
+﻿<Window x:Class="ChatApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ChatApplication"
+        xmlns:userControls="clr-namespace:ChatApplication.UserControls"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="600"
+        Width="1080"
+        FontFamily="Agency FB"
+        FontSize="14"
+        MouseDown="MainWindow_OnMouseDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="270" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+                    Background="{StaticResource PrimaryHueDarkBrush}">
+            <StackPanel Orientation="Horizontal"
+                        Background="White">
+                <Image Source="Images/logo.png"
+                       Width="210"
+                       Height="65" />
+                <Button Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="PlusCircle"
+                                             Width="24"
+                                             Height="24" />
+                </Button>
+            </StackPanel>
+            <TextBox Margin="20 10"
+                     Foreground="White"
+                     FontSize="12"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:HintAssist.Hint="SEARCH"
+                     materialDesign:HintAssist.Foreground="White" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="History"
+                                             Foreground="White"
+                                             Width="24"
+                                             Height="24" />
+                </Button>
+                <Button Grid.Column="1"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="People"
+                                             Foreground="White"
+                                             Width="24"
+                                             Height="24" />
+                </Button>
+                <Button Grid.Column="2"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="Contact"
+                                             Foreground="White"
+                                             Width="24"
+                                             Height="24" />
+                </Button>
+                <Button Grid.Column="3"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="Archive"
+                                             Foreground="White"
+                                             Width="24"
+                                             Height="24" />
+                </Button>
+            </Grid>
+            <ListView Margin="5">
+                <ListViewItem HorizontalContentAlignment="Stretch">
+                    <Grid HorizontalAlignment="Center"
+                          Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0"
+                                Width="40"
+                                Height="40"
+                                CornerRadius="25"
+                                BorderBrush="White"
+                                BorderThickness="0.6">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Images/face.jpg" />
+                            </Border.Background>
+                        </Border>
+                        <Border Grid.Column="0"
+                                Width="10"
+                                Height="10"
+                                Margin="5"
+                                Background="LightGreen"
+                                CornerRadius="15"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Right" />
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Rayhan Alvardo"
+                                       Foreground="White"
+                                       FontWeight="Bold"
+                                       Margin="5 0" />
+                            <TextBlock  Text="How are you?"
+                                        Foreground="White"
+                                        FontSize="11"
+                                        TextTrimming="CharacterEllipsis"
+                                        Opacity="0.6"
+                                        Margin="5 0" />
+                        </StackPanel>
+                        <Border Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Width="20"
+                                Height="20"
+                                Background="White"
+                                Opacity="0.8"
+                                CornerRadius="15">
+                            <TextBlock Text="2"
+                                       FontSize="11"
+                                       Foreground="{StaticResource PrimaryHueDarkBrush}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                </ListViewItem>
+            </ListView>
+        </StackPanel>
+        <Grid Grid.Column="1"
+              Background="#FFE4E4E4">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Background="#FFE4E4E4">
+                <StackPanel.Effect>
+                    <DropShadowEffect BlurRadius="2.5"
+                                      ShadowDepth="1" />
+                </StackPanel.Effect>
+                <Border Width="10"
+                        Height="10"
+                        Margin="10 20"
+                        CornerRadius="25"
+                        Background="Green"
+                        BorderBrush="Green"
+                        BorderThickness="0.6"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" />
+                <TextBlock Text="Alexander Foster"
+                           Margin="5"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold" />
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                        Margin="15 15 10 15">
+                    <materialDesign:PackIcon Kind="Call"
+                                             Foreground="White" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                        Margin="15 15 10 15">
+                    <materialDesign:PackIcon Kind="VideoCall"
+                                             Foreground="White" />
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="0 100"
+                        VerticalAlignment="Bottom">
+                <userControls:MessageReceived HorizontalAlignment="Left" />
+                <userControls:MessageSent HorizontalAlignment="Right" />
+            </StackPanel>
+            <Border Background="LightGreen"
+                    VerticalAlignment="Bottom">
+                <Grid Margin="0 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             MaxHeight="80"
+                             materialDesign:HintAssist.Hint="TYPE MESSAGE ..."
+                             VerticalAlignment="Center"
+                             Margin="5"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Foreground="White" />
+                    <Button Grid.Column="1"
+                            Background="{x:Null}"
+                            Margin="10"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                        <materialDesign:PackIcon Kind="Smiley"
+                                                 Foreground="{StaticResource PrimaryHueDarkBrush}" />
+                    </Button>
+                    <Button Grid.Column="2"
+                            Margin="10"
+                            Background="{x:Null}"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                        <materialDesign:PackIcon Kind="Attachment"
+                                                 Foreground="{StaticResource PrimaryHueDarkBrush}" />
+                    </Button>
+                    <Button Grid.Column="3"
+                            Margin="10"
+                            VerticalAlignment="Bottom"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                        <materialDesign:PackIcon Kind="Send"
+                                                 Foreground="White" />
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+        <StackPanel Grid.Column="2"
+                    Background="WhiteSmoke">
+            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                    HorizontalContentAlignment="Right"
+                    Margin="10">
+                <materialDesign:PackIcon Kind="Close" />
+            </Button>
+            <Border Height="150"
+                    Width="150"
+                    CornerRadius="80"
+                    BorderThickness="1"
+                    BorderBrush="LightGray">
+                <Border.Background>
+                    <ImageBrush ImageSource="Images/face.jpg"></ImageBrush>
+                </Border.Background>
+            </Border>
+            <TextBlock Text="Alexander Forster"
+                       HorizontalAlignment="Center"
+                       Margin="0 10 0 0"
+                       Foreground="Gray"
+                       FontSize="18"
+                       FontWeight="Bold" />
+            <TextBlock Text="Game Designer"
+                       HorizontalAlignment="Center"
+                       FontSize="13"
+                       Foreground="Gray"
+                       Opacity="0.8" />
+            <TextBlock Text="Shallow men believe in luck. Strong man believe in cause and effect"
+                       HorizontalAlignment="Center"
+                       FontSize="8"
+                       Foreground="Gray"
+                       Opacity="0.8" />
+            <StackPanel Margin="20">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Kind="Location"
+                                                 Foreground="Gray" />
+                    </Button>
+                    <TextBlock Text="Sao Paulo, Brazil"
+                               Margin="10 0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="Gray" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Kind="MobilePhone"
+                                                 Foreground="Gray" />
+                    </Button>
+                    <TextBlock Text="( 11 ) 95555-5555"
+                               Margin="10 0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="Gray" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Kind="Email"
+                                                 Foreground="Gray" />
+                    </Button>
+                    <TextBlock Text="afoster@gmail.com"
+                               Margin="10 0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="Gray" />
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="MEDIA"
+                       Margin="20 0"
+                       Foreground="Gray" />
+            <StackPanel Orientation="Horizontal"
+                        Margin="10">
+                <Border Width="50"
+                        Height="50"
+                        CornerRadius="30"
+                        Margin="5">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Images/face.jpg"></ImageBrush>
+                    </Border.Background>
+                </Border>
+                <Border Width="50"
+                        Height="50"
+                        CornerRadius="30"
+                        Margin="5">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Images/face.jpg"></ImageBrush>
+                    </Border.Background>
+                </Border>
+                <Border Width="50"
+                        Height="50"
+                        CornerRadius="30"
+                        Margin="5">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Images/face.jpg"></ImageBrush>
+                    </Border.Background>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

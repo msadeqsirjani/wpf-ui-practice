@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\song-00.png" />
+    <None Remove="Assets\song-01.png" />
+    <None Remove="Assets\song-02.png" />
+    <None Remove="Assets\song-03.png" />
+    <None Remove="Assets\song-04.png" />
+    <None Remove="Assets\song-05.png" />
+    <None Remove="Assets\song-06.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\song-00.png" />
+    <Resource Include="Assets\song-01.png" />
+    <Resource Include="Assets\song-02.png" />
+    <Resource Include="Assets\song-03.png" />
+    <Resource Include="Assets\song-04.png" />
+    <Resource Include="Assets\song-05.png" />
+    <Resource Include="Assets\song-06.png" />
+  </ItemGroup>
+
+</Project>
